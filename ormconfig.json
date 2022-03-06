@@ -1,0 +1,19 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "username": "ale",
+  "password": "alejandro",
+  "database": "sao",
+  "synchronize": false,
+  "entities": [
+    "dist/**/*.entity{.ts,.js}"
+  ],
+  "migrationsTableName": "migrations",
+  "migrations": [
+    "src/database/migrations/*.ts"
+  ],
+  "cli": {
+    "migrationsDir": "src/database/migrations"
+  }
+}
