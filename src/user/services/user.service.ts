@@ -117,6 +117,7 @@ export class UserService {
             'email',
             'phone',
           ],
+          relations: ['role']
         },
       ),
     );

@@ -2,8 +2,8 @@
   "type": "postgres",
   "host": "localhost",
   "port": 5432,
-  "username": "ale",
-  "password": "alejandro",
+  "username": "postgres",
+  "password": "aymee",
   "database": "sao",
   "synchronize": false,
   "entities": [

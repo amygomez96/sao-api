@@ -51,6 +51,7 @@ export class UserController {
     return from(this.userService.login(user));
   }
 
+  @UseGuards(AuthGuard('jwt'))
   @Post('/register')
   register(
     @Body(VALIDATIONS.UNPROCESSABLE_ENTITY_VALIDATION)
