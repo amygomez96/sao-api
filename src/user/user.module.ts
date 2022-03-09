@@ -15,7 +15,8 @@ import { OptativeModule } from '../optative/optative.module';
     }),
     OptativeModule,
   ],
-  providers: [UserService, JwtStrategy],
+  exports: [UserService],
+  providers: [JwtStrategy, UserService],
   controllers: [UserController],
 })
 export class UserModule {}

@@ -7,6 +7,7 @@ import {
 } from 'typeorm';
 import * as bcrypt from 'bcrypt';
 import { Role } from '../../utils/role.entity';
+import { Optative } from '../../optative/entities/optative.entity';
 
 @Entity()
 export class User {
@@ -31,7 +32,7 @@ export class User {
   @Column({ default: null, nullable: true })
   phone: string;
 
-  @Column({ default: null, nullable: true })
+  @ManyToOne(() => Optative, (optative) => optative.id)
   optional: string;
 
   @Column({ default: null, nullable: true })

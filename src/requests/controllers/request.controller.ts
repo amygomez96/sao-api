@@ -53,4 +53,9 @@ export class RequestController {
   delete(@Param('id') id: number): Observable<any> {
     return from(this.requestService.delete(id));
   }
+
+  @Post('approve')
+  assignRequest(@Body() id: number): Observable<any> {
+    return from(this.requestService.assignOptative(id));
+  }
 }

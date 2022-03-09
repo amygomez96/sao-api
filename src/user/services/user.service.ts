@@ -117,7 +117,7 @@ export class UserService {
             'email',
             'phone',
           ],
-          relations: ['role']
+          relations: ['role', 'optional'],
         },
       ),
     );
@@ -138,13 +138,13 @@ export class UserService {
   }
 
   findAll(): Observable<any> {
-    return from(this.UserRepository.find({ relations: ['role'] }));
+    return from(this.UserRepository.find({ relations: ['role', 'optional'] }));
   }
 
   findAllProfessors(): Observable<any> {
     return from(
       this.UserRepository.find({
-        relations: ['role'],
+        relations: ['role', 'optional'],
         where: { role: { id: 2 } },
       }),
     );
@@ -153,14 +153,16 @@ export class UserService {
   findAllStudents(): Observable<any> {
     return from(
       this.UserRepository.find({
-        relations: ['role'],
+        relations: ['role', 'optional'],
         where: { role: { id: 3 } },
       }),
     );
   }
 
   findOne(id: number): Observable<any> {
-    return from(this.UserRepository.findOne(id, { relations: ['role'] }));
+    return from(
+      this.UserRepository.findOne(id, { relations: ['role', 'optional'] }),
+    );
   }
 
   async update(id: number, body: any) {
